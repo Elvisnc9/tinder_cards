@@ -38,7 +38,6 @@ class _CardsSectionState extends State<CardsSectionAlignment>
   void initState() {
     super.initState();
 
-    // Init cards
     for (cardsCounter = 0; cardsCounter < 3; cardsCounter++) {
       cards.add(ProfileCardAlignment(cardsCounter));
     }
@@ -47,7 +46,7 @@ class _CardsSectionState extends State<CardsSectionAlignment>
 
     // Init the animation controller
     _controller =
-        AnimationController(duration: Duration(milliseconds: 700), vsync: this);
+        AnimationController(duration: Duration(milliseconds: 900), vsync: this);
     _controller.addListener(() => setState(() {}));
     _controller.addStatusListener((AnimationStatus status) {
       if (status == AnimationStatus.completed) changeCardsOrder();
@@ -63,6 +62,7 @@ class _CardsSectionState extends State<CardsSectionAlignment>
         middleCard(),
         frontCard(),
 
+        //this is important
         // Prevent swiping if the cards are animating
         _controller.status != AnimationStatus.forward
             ? SizedBox.expand(
