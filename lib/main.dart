@@ -13,3 +13,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+//Use flutter run to run this application
